@@ -19,7 +19,7 @@
             background: linear-gradient(-45deg, #ff6b6b, #6b6bff, #ffb86b, #6bff95);
             background-size: 400% 400%;
             animation: gradientAnimation 10s ease infinite;
-            color: white;
+            color: black;
         }
 
         /* Dashboard Layout */
@@ -45,6 +45,20 @@
             display: block;
         }
 
+        /* Transparent Top Portfolio Bar */
+        .top-bar {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.2); /* Light transparent effect */
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
         /* Particles.js Container */
         #particles-js {
             position: fixed;
@@ -61,39 +75,44 @@
     <!-- Particles.js Background -->
     <div id="particles-js"></div>
 
+    <!-- Transparent Top Portfolio Bar -->
+    <div class="top-bar text-black">
+        Kshitij Agarwal - Portfolio
+    </div>
+
     <!-- Dashboard Layout -->
     <div class="dashboard">
         <!-- Sidebar -->
         <div class="sidebar">
-            <h2 class="text-2xl font-bold text-yellow-300">Dashboard</h2>
+            <h2 class="text-2xl font-bold text-black">Dashboard</h2>
             <ul class="mt-5 space-y-4">
-                <li><a href="#" onclick="showSection('home')" class="text-white hover:text-yellow-300">Home</a></li>
-                <li><a href="#" onclick="showSection('about')" class="text-white hover:text-yellow-300">About Me</a></li>
-                <li><a href="#" onclick="showSection('contact')" class="text-white hover:text-yellow-300">Contact</a></li>
+                <li><a href="#" onclick="showSection('home')" class="text-black hover:text-gray-700">Home</a></li>
+                <li><a href="#" onclick="showSection('about')" class="text-black hover:text-gray-700">About Me</a></li>
+                <li><a href="#" onclick="showSection('contact')" class="text-black hover:text-gray-700">Contact</a></li>
             </ul>
         </div>
 
         <!-- Main Content -->
         <div class="content-container flex-1 p-10">
             <!-- Home Section -->
-            <section id="home" class="content active p-10 bg-purple-500 bg-opacity-90 shadow-lg rounded-lg text-white">
+            <section id="home" class="content active p-10 bg-purple-500 bg-opacity-90 shadow-lg rounded-lg text-black">
                 <h3 class="text-3xl font-bold">Welcome to My Portfolio</h3>
                 <p class="mt-2 text-lg">Hi, I'm Kshitij Agarwal, a passionate coder and problem solver. Explore my website to know more about me.</p>
             </section>
 
             <!-- About Me Section -->
-            <section id="about" class="content p-10 bg-blue-500 bg-opacity-90 shadow-lg rounded-lg text-white">
+            <section id="about" class="content p-10 bg-blue-500 bg-opacity-90 shadow-lg rounded-lg text-black">
                 <h3 class="text-2xl font-bold">About Me</h3>
                 <p class="mt-2">I'm a passionate coder with a strong interest in technology and problem-solving. My experience in management has honed my leadership skills, and my ability to build strong professional networks helps me stay ahead in the industry. I thrive on challenges and love collaborating on innovative projects.</p>
             </section>
 
             <!-- Contact Section -->
-            <section id="contact" class="content p-10 bg-green-500 bg-opacity-90 shadow-lg rounded-lg text-white">
+            <section id="contact" class="content p-10 bg-green-500 bg-opacity-90 shadow-lg rounded-lg text-black">
                 <h3 class="text-2xl font-bold">Contact</h3>
-                <p class="mt-2">Phone: <a href="tel:+919209988263" class="text-yellow-300 hover:text-white">+91 92099 88263</a></p>
-                <p class="mt-2">Email: <a href="mailto:kshitijagarwal743@gmail.com" class="text-yellow-300 hover:text-white">kshitijagarwal743@gmail.com</a></p>
+                <p class="mt-2">Phone: <a href="tel:+919209988263" class="text-black hover:text-gray-700">+91 92099 88263</a></p>
+                <p class="mt-2">Email: <a href="mailto:kshitijagarwal743@gmail.com" class="text-black hover:text-gray-700">kshitijagarwal743@gmail.com</a></p>
                 <div class="flex space-x-4 mt-4">
-                    <a href="https://www.linkedin.com/in/kshitij-agarwal-7a9191320" class="text-blue-500 text-xl hover:text-white"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/kshitij-agarwal-7a9191320" class="text-black text-xl hover:text-gray-700"><i class="fab fa-linkedin"></i></a>
                 </div>
             </section>
         </div>
@@ -119,7 +138,7 @@
                     "value": 80
                 },
                 "color": {
-                    "value": "#ffffff"
+                    "value": "#000000" /* Dark Particles */
                 },
                 "size": {
                     "value": 3
@@ -130,7 +149,7 @@
                 "line_linked": {
                     "enable": true,
                     "distance": 150,
-                    "color": "#ffffff"
+                    "color": "#000000" /* Dark Lines */
                 }
             }
         });
