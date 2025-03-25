@@ -22,6 +22,21 @@
             color: black;
         }
 
+        /* Fully Transparent Top Portfolio Bar */
+        .top-bar {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 15px;
+            backdrop-filter: blur(0px); /* No blur, fully transparent */
+            background: rgba(255, 255, 255, 0); /* Fully transparent */
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: black;
+        }
+
         /* Dashboard Layout */
         .dashboard {
             display: flex;
@@ -45,20 +60,6 @@
             display: block;
         }
 
-        /* Transparent Top Portfolio Bar */
-        .top-bar {
-            position: absolute;
-            width: 100%;
-            top: 0;
-            left: 0;
-            padding: 15px;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.2); /* Light transparent effect */
-            text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
         /* Particles.js Container */
         #particles-js {
             position: fixed;
@@ -75,8 +76,8 @@
     <!-- Particles.js Background -->
     <div id="particles-js"></div>
 
-    <!-- Transparent Top Portfolio Bar -->
-    <div class="top-bar text-black">
+    <!-- Fully Transparent Top Portfolio Bar -->
+    <div class="top-bar">
         Kshitij Agarwal - Portfolio
     </div>
 
@@ -157,3 +158,4 @@
 
 </body>
 </html>
+
