@@ -74,6 +74,18 @@
             display: block;
         }
         
+        .skills-container {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .skill {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        
         input[type="range"], .card, .top-bar, .sidebar {
             background: transparent !important;
             border: none;
@@ -81,14 +93,26 @@
             backdrop-filter: none;
         }
         
-        .music-control {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .contact-info a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
             background: rgba(255, 255, 255, 0.2);
-            padding: 10px 15px;
-            border-radius: 10px;
-            cursor: pointer;
+            transition: 0.3s;
+        }
+        .contact-info a:hover {
+            background: rgba(255, 255, 255, 0.4);
         }
     </style>
 </head>
@@ -111,27 +135,22 @@
         <section id="about" class="card">
             <h2 class="text-3xl font-bold">About Me</h2>
             <p>I am an aspiring developer with a passion for technology and problem-solving. I love working on projects that challenge me and help me grow.</p>
+            <h3 class="text-2xl font-bold mt-4">Skills</h3>
+            <div class="skills-container">
+                <div class="skill">Coding</div>
+                <div class="skill">Management</div>
+                <div class="skill">Networking</div>
+            </div>
         </section>
         
         <section id="contact" class="card">
             <h2 class="text-3xl font-bold">Contact</h2>
-            <p>Email: <a href="mailto:kshitijagarwal743@gmail.com" class="text-blue-500">kshitijagarwal743@gmail.com</a></p>
-            <p>Phone: 9209988263</p>
-            <div class="mt-4">
-                <a href="https://www.linkedin.com/in/kshitij-agarwal-7a9191320" class="text-blue-500 text-xl hover:text-gray-300">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+            <div class="contact-info">
+                <a href="mailto:kshitijagarwal743@gmail.com"><i class="fas fa-envelope"></i>Email: kshitijagarwal743@gmail.com</a>
+                <a href="tel:9209988263"><i class="fas fa-phone"></i>Phone: 9209988263</a>
+                <a href="https://www.linkedin.com/in/kshitij-agarwal-7a9191320" target="_blank"><i class="fab fa-linkedin"></i>LinkedIn: Kshitij Agarwal</a>
             </div>
         </section>
-    </div>
-
-    <audio id="bg-music" loop autoplay>
-        <source src="https://www.chosic.com/wp-content/uploads/2021/04/Ethereal_Dream.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    
-    <div class="music-control" onclick="toggleMusic()">
-        <i id="music-icon" class="fas fa-pause"></i>
     </div>
     
     <script>
@@ -150,27 +169,6 @@
             waveSpeed: 1.5,
             zoom: 1
         });
-        
-        let music = document.getElementById('bg-music');
-        let musicIcon = document.getElementById('music-icon');
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            music.play().catch(() => {
-                document.body.addEventListener('click', () => music.play(), { once: true });
-            });
-        });
-        
-        function toggleMusic() {
-            if (music.paused) {
-                music.play();
-                musicIcon.classList.remove('fa-play');
-                musicIcon.classList.add('fa-pause');
-            } else {
-                music.pause();
-                musicIcon.classList.remove('fa-pause');
-                musicIcon.classList.add('fa-play');
-            }
-        }
     </script>
 </body>
 </html>
