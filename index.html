@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Custom Styles -->
     <style>
         /* Animated Gradient Background */
         @keyframes gradientAnimation {
@@ -21,6 +20,28 @@
             background-size: 400% 400%;
             animation: gradientAnimation 10s ease infinite;
             color: white;
+        }
+
+        /* Dashboard Layout */
+        .dashboard {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+            display: none;
+        }
+
+        .active {
+            display: block;
         }
 
         /* Particles.js Container */
@@ -39,40 +60,47 @@
     <!-- Particles.js Background -->
     <div id="particles-js"></div>
 
-    <!-- Navbar -->
-    <nav class="bg-white bg-opacity-80 shadow-md p-4 flex justify-between text-purple-700">
-        <h1 class="text-xl font-bold">Kshitij Agarwal</h1>
-        <ul class="flex space-x-4">
-            <li><a href="#about" class="hover:text-blue-500">About</a></li>
-            <li><a href="#contact" class="hover:text-blue-500">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <!-- Header Section -->
-    <header class="text-center py-20">
-        <h2 class="text-4xl font-bold text-yellow-300">Welcome to My Portfolio</h2>
-    </header>
-    
-    <!-- About Section -->
-    <section id="about" class="p-10 bg-blue-500 bg-opacity-90 shadow-lg mx-10 rounded-lg text-white">
-        <h3 class="text-2xl font-bold">About Me</h3>
-        <p class="mt-2">I'm a passionate coder with a strong interest in technology and problem-solving. My experience in management has honed my leadership skills, and my ability to build strong professional networks helps me stay ahead in the industry. I thrive on challenges and love collaborating on innovative projects.</p>
-    </section>
-    
-    <!-- Contact Section -->
-    <section id="contact" class="p-10 bg-green-500 bg-opacity-90 shadow-lg mx-10 rounded-lg mt-10 text-white">
-        <h3 class="text-2xl font-bold">Contact</h3>
-        <p class="mt-2">Phone: <a href="tel:+919209988263" class="text-yellow-300 hover:text-white">+91 92099 88263</a></p>
-        <p class="mt-2">Email: <a href="mailto:kshitijagarwal743@gmail.com" class="text-yellow-300 hover:text-white">kshitijagarwal743@gmail.com</a></p>
-        <div class="flex space-x-4 mt-4">
-            <a href="https://www.linkedin.com/in/kshitij-agarwal-7a9191320" class="text-blue-500 text-xl hover:text-white"><i class="fab fa-linkedin"></i></a>
+    <!-- Dashboard Layout -->
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2 class="text-2xl font-bold text-yellow-300">Dashboard</h2>
+            <ul class="mt-5 space-y-4">
+                <li><a href="#" onclick="showSection('about')" class="text-white hover:text-yellow-300">About Me</a></li>
+                <li><a href="#" onclick="showSection('contact')" class="text-white hover:text-yellow-300">Contact</a></li>
+            </ul>
         </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="text-center p-4 mt-10 bg-black text-white">
-        &copy; 2025 Kshitij Agarwal. All Rights Reserved.
-    </footer>
+
+        <!-- Main Content -->
+        <div class="content-container flex-1 p-10">
+            <!-- About Me Section -->
+            <section id="about" class="content active p-10 bg-blue-500 bg-opacity-90 shadow-lg rounded-lg text-white">
+                <h3 class="text-2xl font-bold">About Me</h3>
+                <p class="mt-2">I'm a passionate coder with a strong interest in technology and problem-solving. My experience in management has honed my leadership skills, and my ability to build strong professional networks helps me stay ahead in the industry. I thrive on challenges and love collaborating on innovative projects.</p>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="content p-10 bg-green-500 bg-opacity-90 shadow-lg rounded-lg text-white">
+                <h3 class="text-2xl font-bold">Contact</h3>
+                <p class="mt-2">Phone: <a href="tel:+919209988263" class="text-yellow-300 hover:text-white">+91 92099 88263</a></p>
+                <p class="mt-2">Email: <a href="mailto:kshitijagarwal743@gmail.com" class="text-yellow-300 hover:text-white">kshitijagarwal743@gmail.com</a></p>
+                <div class="flex space-x-4 mt-4">
+                    <a href="https://www.linkedin.com/in/kshitij-agarwal-7a9191320" class="text-blue-500 text-xl hover:text-white"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- JavaScript for Dashboard Navigation -->
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content').forEach(section => section.classList.remove('active'));
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
 
     <!-- Particles.js Script -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
